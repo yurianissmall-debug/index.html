@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Pulse - Gamer Survey</title>
+    <style>
+        :root {
+            --bg: #0d0e15;
+            --panel: #161925;
+            --neon-cyan: #00f2fe;
+            --neon-magenta: #ff007f;
+            --text: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            background: radial-gradient(circle at center, #1a1c2e 0%, #0d0e15 100%);
+        }
+
+        .survey-container {
+            background-color: var(--panel);
+            padding: 30px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+            border: 1px solid rgba(255, 0, 127, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+        }
+
+        p.subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: #8a8fab;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--neon-magenta);
+            font-size: 1.05em;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            background-color: #0d0e15;
+            border: 1px solid #323750;
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 1em;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        select:focus {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.4);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, var(--neon-magenta), #b0005d);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.7);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="survey-container">
+        <h1>Arcade Pulse</h1>
+        <p class="subtitle">Gamer Preferences & Data Analytics Survey</p>
+        
+        <!-- REEMPLAZA LA URL DE ABAJO CON TU LINK DE GOOGLE APPS SCRIPT AL IMPLEMENTAR -->
+        <form action="https://script.google.com/macros/s/TU_URL_DE_APPS_SCRIPT/exec" method="POST">
+            
+            <!-- Question 1 -->
+            <div class="form-group">
+                <label for="plataforma">1. Which devices do you use daily for gaming?</label>
+                <select id="plataforma" name="plataforma" required>
+                    <option value="" disabled selected>Choose an option...</option>
+                    <option value="Smartphone">Smartphone</option>
+                    <option value="Console">Console (PlayStation / Xbox / Nintendo)</option>
+                    <option value="PC">PC Gaming</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="form-group">
+                <label for="horas">2. How many hours do you play per week?</label>
+                <select id="horas" name="horas" required>
+                    <option value="" disabled selected>Choose an option...</option>
+                    <option value="Less than 5 hours">Less than 5 hours</option>
+                    <option value="5 to 15 hours">5 to 15 hours</option>
+                    <option value="15 to 30 hours">15 to 30 hours</option>
+                    <option value="More than 30 hours">More than 30 hours</option>
+                </select>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="form-group">
+                <label for="formato">3. Which game format do you prefer?</label>
+                <select id="formato" name="formato" required>
+                    <option value="" disabled selected>Choose an option...</option>
+                    <option value="Digital">Digital Download</option>
+                    <option value="Physical">Physical Disc / Cartridge</option>
+                    <option value="Subscription">Subscription Services (Game Pass / Plus)</option>
+                </select>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="form-group">
+                <label for="modo">4. What is your preferred game mode?</label>
+                <select id="modo" name="modo" required>
+                    <option value="" disabled selected>Choose an option...</option>
+                    <option value="Singleplayer">Singleplayer (Story Mode)</option>
+                    <option value="Cooperative">Cooperative (With friends)</option>
+                    <option value="Multiplayer">Competitive Multiplayer (Online PvP)</option>
+                </select>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="form-group">
+                <label for="genero">5. What is your favorite video game genre?</label>
+                <select id="genero" name="genero" required>
+                    <option value="" disabled selected>Choose an option...</option>
+                    <option value="Action/Shooter">Action / Shooter (FPS/TPS)</option>
+                    <option value="RPG">RPG (Role-Playing Games)</option>
+                    <option value="Sports/Racing">Sports / Racing</option>
+                    <option value="Strategy/Puzzle">Strategy / Puzzle</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit Responses</button>
+        </form>
+    </div>
+
+</body>
+</html>
